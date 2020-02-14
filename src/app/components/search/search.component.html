@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col">
+        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar artículo">
+    </div>
+</div>
+
+<div class="card-columns m-5">
+    <div *ngFor="let articulo of articulos" class="card">
+      <img [src]="articulo.thumbnail" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{articulo.title}}</h5>
+        <p class="card-text">{{articulo.price}}</p>
+        <p class="card-text">{{articulo.seller.id}}</p>
+      </div>
+    </div>
+</div>
