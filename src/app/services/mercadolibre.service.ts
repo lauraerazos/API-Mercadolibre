@@ -10,9 +10,9 @@ export class MercadolibreService {
     console.log('Service listo');
   }
 
-  getArticulo(termino: string){
+  getArticulo(termino: string, offset: string){
     //const headers = new HttpHeaders({});
-    return this.http.get(`https://api.mercadolibre.com/sites/MCO/search?q=${termino}`);
+    return this.http.get(`https://api.mercadolibre.com/sites/MCO/search?q=${termino}&offset=${offset}&limit=50`);
   }
 }
 

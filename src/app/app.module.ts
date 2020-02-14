@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -14,6 +15,7 @@ import { from } from 'rxjs';
 
 //importar rutas
 import { ROUTES } from './app.routes';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { ROUTES } from './app.routes';
     HomeComponent,
     SearchComponent,
     ItemComponent,
-    NavbarComponent
+    NavbarComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     HttpClientModule,    
     RouterModule.forRoot(ROUTES, { useHash: true})

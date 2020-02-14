@@ -5,7 +5,7 @@
 </div>
 
 <div class="card-columns m-5">
-    <div *ngFor="let articulo of articulos" class="card">
+    <div *ngFor="let articulo of articulos | paginate: {itemsPerPage:50, currentPage: p, totalItems: totalResults}" class="card">
       <img [src]="articulo.thumbnail" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{articulo.title}}</h5>
@@ -14,3 +14,4 @@
       </div>
     </div>
 </div>
+<pagination-controls  (pageChange)="p = $event; adelante($event)"></pagination-controls>
