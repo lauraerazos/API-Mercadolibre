@@ -13,8 +13,8 @@ hr {
     width: 50% !important;
 }
 
-.seller{
-    margin-top: 1rem;
+.sellerName{
+    margin-bottom: 0 !important;
 }
 .btnStyle{
     color: rgb(15, 39, 105);
