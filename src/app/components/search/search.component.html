@@ -1,17 +1,20 @@
-<div class="row">
-    <div class="col">
-        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar artículo">
-    </div>
+<div class="col">
+  <input #termino type="text" (keydown)="capturar($event, termino.value)" class="form-control" placeholder="Buscar artículo">
+  <button class="btn btnStyle my-2 my-sm-0" type="submit" (click)="buscar(termino.value)"><img src="assets/img/search.png" width="25px" height="25px"></button>
 </div>
 
-<div class="card-columns m-5">
-    <div *ngFor="let articulo of articulos | paginate: {itemsPerPage:50, currentPage: p, totalItems: totalResults}" class="card">
-      <img [src]="articulo.thumbnail" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{articulo.title}}</h5>
-        <p class="card-text">{{articulo.price}}</p>
-        <p class="card-text">{{articulo.seller.id}}</p>
-      </div>
+<div *ngIf="articulos.length>0" class="card-columns">
+  <div *ngFor="let articulo of articulos | paginate: {itemsPerPage:50, currentPage: p, totalItems: totalResults}" class="card">
+    <img [src]="articulo.thumbnail" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{articulo.title}}</h5>
+      <p class="card-text">{{articulo.price | currency:'COP':'symbol-narrow'}}</p>
+      <p class="card-text">{{articulo.seller.id}}</p>
+      <p class="card-text">{{articulo.sellerName}}</p>
     </div>
+  </div>
+</div>
+<div *ngIf="articulos.length === 0 && flag" class="card-columns ">
+  <p class="notFound">El artículo no fue encontrado</p>
 </div>
 <pagination-controls  (pageChange)="p = $event; adelante($event)"></pagination-controls>

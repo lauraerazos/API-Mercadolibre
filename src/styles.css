@@ -8,6 +8,42 @@ hr {
     border-color: white;
 }
 
+.card-img-top{
+    width: 50% !important;
+}
+
+.btnStyle{
+    color: rgb(15, 39, 105);
+    border-color: rgb(15, 39, 105);
+    margin-left: 0.5rem;
+    height: 37px;
+}
+
+.btnStyle:hover{
+    background-color: rgb(15, 39, 105);;
+}
+
+.col {
+    display: inline-flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.color {
+    background-color: #fff159;
+    padding: 20px;
+}
+
+.notFound{
+    color: teal;
+    margin: 2rem;
+}
+
+.title{
+    margin: auto;
+    color: rgb(15, 39, 105);
+}
+
 .puntero {
     cursor: pointer;
 }
