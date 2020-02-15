@@ -9,9 +9,13 @@ hr {
 }
 
 .card-img-top{
+    float: right;
     width: 50% !important;
 }
 
+.seller{
+    margin-top: 1rem;
+}
 .btnStyle{
     color: rgb(15, 39, 105);
     border-color: rgb(15, 39, 105);

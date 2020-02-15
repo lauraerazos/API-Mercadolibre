@@ -8,7 +8,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
-import { ItemComponent } from './components/item/item.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { from } from 'rxjs';
 
@@ -19,7 +18,6 @@ import { ROUTES } from './app.routes';
   declarations: [
     AppComponent,
     SearchComponent,
-    ItemComponent,
     NavbarComponent
   ],
   imports: [

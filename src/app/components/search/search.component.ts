@@ -62,7 +62,14 @@ export class SearchComponent implements OnInit {
     let index = numeroPagina*50;
     this.mercadolibre.getArticulo(this.txtSearch, index + '')
     .subscribe( (data:any) => {console.log(data.results);
-      this.articulos = data.results;
+      this.articulos=[];
+      data.results.map(i => {
+        this.mercadolibre.getSeller(i.seller.id).subscribe((data:any) => {
+          i.sellerName=data;
+        });
+        this.articulos.push(i);
+        
+      })
     });
   }
 }
